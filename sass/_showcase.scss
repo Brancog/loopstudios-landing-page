@@ -1,0 +1,119 @@
+.showcase {
+  margin-top: 5rem;
+
+  &__heading-wrap {
+    margin-bottom: 2.5rem;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__img-wrap {
+    cursor: pointer;
+    position: relative;
+  }
+  &__overlay-filter {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    background-color: $color-white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 50;
+  }
+  &__img-wrap:hover &__overlay-filter {
+    opacity: 0.7;
+  }
+  &__img-wrap:hover &__img-heading {
+    color: $color-black;
+  }
+  &__img-wrap:hover &__img {
+    filter: grayscale(10%) sepia(30%);
+    -webkit-filter: grayscale(10%) sepia(30%);
+    -moz-filter: grayscale(10%) sepia(30%);
+  }
+  &__img-heading {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 6vw, 2.5rem);
+    font-weight: $font-weight-light;
+    max-width: 40%;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+    filter: brightness(80%);
+  }
+  &__btn {
+    display: block;
+    font-family: $font-family-alata;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    color: $color-black;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+    border: 2px solid $color-black;
+    padding: 0.5rem 3.5rem;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:active {
+      color: $color-white;
+      background-color: $color-black;
+    }
+
+    &--mobile {
+    }
+    &--desktop {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .showcase {
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+    &__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &__btn {
+      &--mobile {
+        display: none;
+      }
+      &--desktop {
+        display: block;
+        margin: 0;
+      }
+    }
+    &__heading-wrap {
+      display: flex;
+      margin-bottom: 3.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__img-heading {
+      bottom: 5%;
+      left: 10%;
+      font-size: clamp(0.8rem, 3vw, 2rem);
+      max-width: 55%;
+    }
+  }
+}

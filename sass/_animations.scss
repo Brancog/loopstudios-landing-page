@@ -1,0 +1,13 @@
+@keyframes slide-in-links {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}

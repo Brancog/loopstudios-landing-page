@@ -1,0 +1,128 @@
+.footer {
+  background-color: $color-black;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0rem;
+  }
+
+  &__logo-wrap {
+  }
+
+  &__logo {
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    gap: 1.5rem;
+  }
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      color: $color-white;
+      font-weight: $font-weight-regular;
+      font-size: 1.125rem;
+      text-align: center;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__social-ico-wrap {
+    display: flex;
+    align-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &__social-ico {
+    width: 100%;
+    height: auto;
+  }
+  &__copyright {
+    color: $color-dark-gray;
+    font-family: $font-family-alata;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .footer {
+    &__wrap {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    &__logo-links-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    &__links {
+      flex-direction: row;
+      // align-items: center;
+      margin: 0;
+    }
+
+    &__link-wrap {
+      position: relative;
+    }
+
+    &__link-wrap:hover &__link-underline {
+      opacity: 1;
+    }
+
+    &__link-underline {
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 3px;
+      border-radius: 2px;
+      background: $color-white;
+      display: block;
+      opacity: 0;
+      transition: 0.3s all ease;
+
+      &--icon {
+        top: 2.2rem;
+      }
+    }
+
+    &__social-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    &__social-ico-wrap {
+      position: relative;
+    }
+
+    &__social-ico-wrap:hover &__link-underline {
+      opacity: 1;
+    }
+
+    &__social {
+      margin: 0;
+      justify-content: end;
+    }
+  }
+}

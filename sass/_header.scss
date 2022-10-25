@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+  height: 85vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("../images/mobile/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+
+    // SWITCHING TO DESKTOP SIZE BACKGROUND IMAGE ON 900PX+
+    @media (min-width: 56.25em) {
+      background-image: url("../images/desktop/image-hero.jpg");
+      filter: brightness(70%);
+      background-position: center;
+    }
+  }
+}
+
+.main-heading {
+  top: 50%;
+  margin-top: calc(20vh + 0.5rem);
+  padding: 2rem;
+  width: 100%;
+  max-width: 55rem;
+  border: 2px solid $color-white;
+  h1 {
+    color: $color-white;
+    font-size: clamp(1.5rem, 10vw, 4rem);
+    max-width: 5rem;
+    font-weight: $font-weight-light;
+    text-transform: uppercase;
+  }
+}

@@ -1,3 +1,22 @@
 @import "variables";
 @import "utility";
-@import "navigation-mobile";
+@import "header";
+@import "navigation";
+@import "about";
+@import "showcase";
+@import "footer";
+@import "animations";
+
+html {
+  margin-right: calc(-1 * (100vw - 100%));
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: $font-family-josefin-sans;
+  height: 100%;
+  // position: relative;
+  overflow-x: hidden;
+}

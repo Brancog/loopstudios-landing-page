@@ -1,0 +1,138 @@
+.navbar {
+  &__desktop {
+    &-link-wrap {
+      position: relative;
+    }
+
+    &-link-wrap:hover &-link-underline {
+      opacity: 1;
+    }
+
+    &-link-underline {
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 3px;
+      border-radius: 2px;
+      background: $color-white;
+      display: block;
+      opacity: 0;
+      transition: 0.3s all ease;
+    }
+    &-links {
+      display: none;
+      gap: 1.5rem;
+      a {
+        color: $color-white;
+        text-transform: capitalize;
+        font-size: 1.175rem;
+        font-weight: $font-weight-regular;
+      }
+    }
+  }
+  &__mobile {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.5rem;
+  }
+  &__logo-wrap {
+    z-index: 100;
+  }
+
+  &__logo-img {
+  }
+
+  &__mobile-burger {
+    cursor: pointer;
+    z-index: 100;
+    div {
+      width: 25px;
+      height: 3px;
+      background-color: $color-white;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.mobile-submenu {
+  &__wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+  }
+  &__overlay {
+    position: absolute;
+    background-color: $color-black;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    transition: all 0.25s ease-in;
+    transform: translateX(100%);
+    // overflow: hidden;
+  }
+
+  &__links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    // top: 20vh;
+    list-style: none;
+    z-index: 50;
+    li {
+      opacity: 0;
+      visibility: hidden;
+      a {
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+        font-weight: $font-weight-light;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .navbar {
+    &__desktop {
+      &-links {
+        display: flex;
+      }
+    }
+  }
+
+  .navbar__mobile-burger {
+    display: none;
+  }
+  .mobile-submenu__overlay {
+    display: none;
+  }
+  .mobile-submenu__wrap {
+    display: none;
+  }
+}
+
+// HAMBURGER TOGGLE
+.mobile-submenu__overlay--active {
+  transform: translateX(0%);
+}
+
+.toggle .line-1 {
+  transform: rotate(-44deg) translate(-5px, 6px);
+}
+
+.toggle .line-2 {
+  opacity: 0;
+}
+
+.toggle .line-3 {
+  transform: rotate(44deg) translate(-5px, -6px);
+}

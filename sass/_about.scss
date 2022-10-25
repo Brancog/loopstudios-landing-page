@@ -1,0 +1,56 @@
+.about {
+  padding-top: 5rem;
+  &__img-wrap {
+    // margin-top: 5rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__heading {
+    text-align: center;
+    max-width: 25rem;
+    margin: 2.5rem auto 5rem auto;
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: $color-dark-gray;
+      font-family: $font-family-alata;
+    }
+  }
+}
+
+@media screen and (min-width: 56.25em) {
+  .about {
+    position: relative;
+    // display: flex;
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__img-wrap {
+      width: 70%;
+      max-width: 65rem;
+    }
+
+    &__heading {
+      text-align: left;
+      background-color: $color-white;
+      max-width: 50rem;
+      padding: 6% 6% 0 4%;
+      position: absolute;
+      bottom: 0;
+      left: 55%;
+
+      p {
+      }
+    }
+  }
+}
